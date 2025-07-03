@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy Study Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        .subject-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        
+        .file-upload {
+            display: none;
+        }
+        
+        .upload-label {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .upload-label::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 0.375rem;
+        }
+        
+        .upload-label:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c04e3831-9cdd-4993-9968-3bf2e9f60884.png" alt="Pharmacy logo showing a stylized mortar and pestle with medical cross symbol in blue and white colors" class="rounded-lg" />
+                    <h1 class="text-2xl font-bold">Pharmacy Study Portal</h1>
+                </div>
+                <nav>
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="hover:text-gray-200">Dashboard</a></li>
+                        <li><a href="#subjects" class="hover:text-gray-200">Subjects</a></li>
+                        <li><a href="#assignments" class="hover:text-gray-200">Assignments</a></li>
+                        <li><a href="#" class="hover:text-gray-200">Progress</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section class="mb-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Your Study Portal</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Access your course materials, submit assignments, and track your progress in pharmaceutical studies.
+                </p>
+            </div>
+            
+            <div id="subjects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="subject-card bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3eaca3d9-f3ed-4f7f-91ca-29dfe05c8069.png" alt="Icon representing Pharmacology showing molecular structures and medication vials" class="mr-3" />
+                        <h3 class="text-xl font-semibold text-gray-800">Pharmacology</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Study drug actions and effects on living organisms. Understand mechanisms of drug action.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Materials →</a>
+                </div>
+                
+                <div class="subject-card bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/90d9641a-8078-440a-bbbf-d01a2d3b6026.png" alt="Icon representing Pharmacotherapeutics showing a doctor's prescription pad and pills" class="mr-3" />
+                        <h3 class="text-xl font-semibold text-gray-800">Pharmacotherapeutics</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Learn about drug use for treatment of diseases and clinical decision-making.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Materials →</a>
+                </div>
+                
+                <div class="subject-card bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2460af7f-7fcb-4f24-85de-3da4a7c1e906.png" alt="Icon representing Hospital Pharmacy showing a hospital building with pharmacy symbol" class="mr-3" />
+                        <h3 class="text-xl font-semibold text-gray-800">Hospital & Clinical Pharmacy</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Study pharmacy practice in hospital settings and clinical aspects of medication use.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Materials →</a>
+                </div>
+                
+                <div class="subject-card bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a77a85dc-631d-47b9-a448-5589747e6b52.png" alt="Icon representing Pharmacy Law showing a gavel and legal documents with pharmacy symbols" class="mr-3" />
+                        <h3 class="text-xl font-semibold text-gray-800">Pharmacy Law & Ethics</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Understand legal and ethical aspects of pharmacy practice and drug regulations.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Materials →</a>
+                </div>
+                
+                <div class="subject-card bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/faf3b25a-17cb-4c19-bc1a-3f7ea6d07aa3.png" alt="Icon representing Biochemistry showing test tubes and molecular structure diagrams" class="mr-3" />
+                        <h3 class="text-xl font-semibold text-gray-800">Biochemistry Community</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Explore chemical processes in living organisms and their relation to drug metabolism.
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Materials →</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="assignments" class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Study Assignments</h2>
+            <p class="text-gray-600 mb-8">Download assignments for your course materials below. Complete them at your own pace.</p>
+            
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="mb-4">
+                    <h3 class="text-xl font-semibold text-gray-800">Assignment 1: Drug Classification</h3>
+                    <p class="text-gray-600 mb-2 mt-2">Subject: Pharmacology</p>
+                    <p class="text-gray-600 mb-4">Study material focusing on drug classification systems and their clinical relevance.</p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="Assignment 1.docx" download class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download Assignment
+                        </a>
+                        <a href="#" class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition flex items-center">
+                            Solution Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-gray-100 rounded-lg hidden" id="uploadSuccess">
+                    <p class="text-green-600 font-medium">Assignment uploaded successfully!</p>
+                </div>
+            </div>
+            
+             <div class="flex space-x-4">
+                        <a href="Assignment 1.docx" download class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download Assignment
+                        </a>
+                        <a href="#" class="bg-gray-100 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-200 transition flex items-center">
+                            Solution Guide
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-gray-100 rounded-lg hidden" id="uploadSuccess">
+                    <p class="text-green-600 font-medium">Assignment uploaded successfully!</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Placeholder for future assignments -->
+                <div class="bg-white rounded-lg shadow-md p-6 relative">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Assignment 2: Drug Mechanisms</h3>
+                    <p class="text-gray-600 mb-3">Study material focusing on drug mechanisms and mode of action.</p>
+                    <div class="flex space-x-4">
+                        <a href="Assignment_1_SOP_Community_Pharmacy.docx"class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download Assignment
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 relative">
+                    <div class="absolute top-4 right-4 bg-gray-200 text-gray-600 text-xs font-medium px-2 py-1 rounded">Coming Soon</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Assignment 3</h3>
+                    <p class="text-gray-500 text-sm">Available after submitting Assignment 2</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 relative">
+                    <div class="absolute top-4 right-4 bg-gray-200 text-gray-600 text-xs font-medium px-2 py-1 rounded">Coming Soon</div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Assignment 4</h3>
+                    <p class="text-gray-500 text-sm">Available after submitting Assignment 3</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bg-white rounded-lg shadow-md p-6 mt-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Study Progress</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Latest Materials</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="w-4 h-4 bg-blue-100 rounded-full mr-2"></div>
+                        <span class="text-gray-600">Pharmacology - Assignments</span>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <div class="w-4 h-4 bg-blue-100 rounded-full mr-2"></div>
+                        <span class="text-gray-600">Pharmacy Law - Case Studies</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Overall Progress</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-4">
+                        <div class="bg-blue-600 h-4 rounded-full" style="width: 7%"></div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">1 of 15 assignments completed</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-lg font-semibold mb-4">Pharmacy Study Portal</h3>
+                    <p class="text-gray-400 max-w-sm">
+                        A comprehensive platform for pharmacy students to manage their studies, assignments, and track progress.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="#subjects" class="text-gray-400 hover:text-white">Subjects</a></li>
+                            <li><a href="#assignments" class="text-gray-400 hover:text-white">Assignments</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-semibold mb-4">Resources</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Study Materials</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Tutorials</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2024 Pharmacy Study Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle file selection
+            const fileInput = document.getElementById('assignmentFile');
+            const fileInfo = document.getElementById('fileInfo');
+            const uploadForm = document.getElementById('assignmentUploadForm');
+            const uploadSuccess = document.getElementById('uploadSuccess');
+            
+            fileInput.addEventListener('change', function() {
+                if (fileInput.files.length > 0) {
+                    fileInfo.textContent = 'Selected file: ' + fileInput.files[0].name;
+                } else {
+                    fileInfo.textContent = '';
+                }
+            });
+            
+            uploadForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (fileInput.files.length === 0) {
+                    alert('Please select a file to upload');
+                    return;
+                }
+                
+                // In a real application, you would upload the file to a server here
+                // For this demo, we'll just simulate a successful upload
+                
+                // Show success message
+                uploadSuccess.classList.remove('hidden');
+                
+                // Simulate server response with timeout
+                setTimeout(function() {
+                    alert('Assignment 1 submitted successfully!');
+                    // Update the UI to show completion
+                    const statusSpan = uploadForm.previousElementSibling.querySelector('span');
+                    if (statusSpan) {
+                        statusSpan.textContent = 'Submitted';
+                        statusSpan.classList.remove('bg-blue-100', 'text-blue-800');
+                        statusSpan.classList.add('bg-green-100', 'text-green-800');
+                    }
+                    
+                    // Update progress bar (in a real app, this would be dynamic)
+                    const progressBar = document.querySelector('.bg-blue-600');
+                    if (progressBar) {
+                        progressBar.style.width = '7%';
+                    }
+                    
+                    // Hide the upload form
+                    uploadForm.style.display = 'none';
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
+
